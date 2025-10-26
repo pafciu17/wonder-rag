@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'LangGraph RAG Demo',
-  description: 'Chat with your documents using RAG and LangGraph',
+  title: 'Alice in Wonderland RAG',
+  description: 'Ask questions about Alice\'s Adventures in Wonderland using AI-powered semantic search',
 };
 
 export default function RootLayout({

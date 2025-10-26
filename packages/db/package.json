@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit",
     "db:generate": "drizzle-kit generate:pg",
     "db:push": "drizzle-kit push:pg",
-    "db:migrate": "node -r @neondatabase/serverless/config -e 'require(\"./dist/migrate.js\").migrate()'"
+    "db:migrate": "node -e 'require(\"./dist/migrate.js\").runMigrations()'"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.9.5",

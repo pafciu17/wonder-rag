@@ -31,7 +31,7 @@ export async function chat(
   });
 
   // Retrieve relevant documents
-  const sources = await retrieveDocuments(message, 5, 0.7);
+  const sources = await retrieveDocuments(message, 5, 0.3);
 
   // Generate answer
   const answer = await generateConversationalAnswer(message, sources, chatHistory);

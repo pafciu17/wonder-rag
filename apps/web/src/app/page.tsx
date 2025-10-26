@@ -28,10 +28,10 @@ export default function Home() {
           color: 'white'
         }}>
           <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: 0 }}>
-            🤖 LangGraph RAG Demo
+            🐰 Alice in Wonderland RAG
           </h1>
           <p style={{ marginTop: '8px', opacity: 0.9, fontSize: '14px' }}>
-            Chat with your knowledge base powered by LangGraph and OpenAI
+            Ask questions about Alice's Adventures in Wonderland powered by AI
           </p>
         </header>
         <Chat />

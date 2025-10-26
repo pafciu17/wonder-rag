@@ -1,21 +1,21 @@
-# 🤖 LangGraph RAG Demo
+# 🐰 Alice in Wonderland RAG
 
-A modern, production-ready Retrieval-Augmented Generation (RAG) application built with LangGraph, Next.js 15, and Neon Postgres. Chat with your documents using AI with full source citations.
+Chat with Alice's Adventures in Wonderland using AI-powered semantic search! Ask questions about the story and get answers with source citations from the book. Built with Next.js 15, OpenAI embeddings, and Neon Postgres with pgvector.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?style=flat-square)
-![LangGraph](https://img.shields.io/badge/LangGraph-0.0.11-green?style=flat-square)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)
 
 ## ✨ Features
 
-- 🔍 **Semantic Search** - Vector similarity search with pgvector
-- 💬 **Conversational AI** - Maintain context across multiple messages
-- 📚 **Source Citations** - Every answer includes references to source documents
-- 🎨 **Modern UI** - Beautiful, responsive interface built with Next.js 15
+- 🐰 **Alice in Wonderland Knowledge Base** - Full text of the classic novel
+- 🔍 **Semantic Search** - Ask questions in natural language
+- 💬 **Conversational AI** - GPT-4o-mini generates contextual answers
+- 📚 **Source Citations** - Every answer references specific passages from the book
+- 🎨 **Modern UI** - Beautiful, responsive chat interface
 - 🚀 **Production Ready** - Deployable to Vercel with one click
-- 📦 **Monorepo Structure** - Shared packages for db, ingest, and rag logic
-- ⚡ **Real-time Responses** - Fast vector search with optimized indexes
+- ⚡ **Fast Vector Search** - Powered by pgvector with optimized indexes
 
 ## 🏗️ Architecture
 
@@ -35,18 +35,18 @@ rag/
 │   │   ├── loader.ts        # Load documents
 │   │   ├── chunker.ts       # Text splitting
 │   │   └── embedder.ts      # OpenAI embeddings
-│   └── rag/                 # LangGraph orchestration
-│       ├── graph.ts         # RAG workflow graph
+│   └── rag/                 # RAG logic
+│       ├── chat.ts          # Chat orchestration
 │       ├── retriever.ts     # Vector search
 │       └── generator.ts     # LLM generation
-└── docs/                    # Sample documents
+└── docs/                    # Alice in Wonderland text
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js ≥ 18.17.0
+- Node.js ≥ 20.0.0
 - pnpm ≥ 8.0.0
 - [Neon Postgres](https://neon.tech) account (free tier works!)
 - [OpenAI API](https://platform.openai.com) key
@@ -83,10 +83,10 @@ Or manually execute the SQL script in your Neon console:
 cat packages/db/drizzle/0000_init.sql
 ```
 
-4. **Ingest sample documents**:
+4. **Ingest Alice in Wonderland**:
 
 ```bash
-pnpm ingest "docs/**/*.md"
+pnpm ingest "docs/alice-in-wonderland.txt"
 ```
 
 5. **Start development server**:
@@ -111,9 +111,8 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 - **TypeScript** - Type safety
 
 ### Backend
-- **LangGraph.js** - Orchestrate RAG workflows
-- **LangChain** - LLM framework
-- **OpenAI API** - GPT-4o-mini for generation, text-embedding-3-small for embeddings
+- **LangChain** - LLM framework and embeddings
+- **OpenAI API** - GPT-4o-mini for chat, text-embedding-3-small for embeddings
 - **Drizzle ORM** - Type-safe database queries
 
 ### Database
@@ -126,18 +125,22 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 
 ## 📝 Usage
 
-### Ingesting Documents
+### Example Questions
 
-Add your own documents to the `docs/` folder (markdown or text files), then run:
+Try asking:
+- "Who is Alice?"
+- "What happens at the Mad Tea Party?"
+- "Tell me about the Cheshire Cat"
+- "What did Alice drink to become smaller?"
+- "Who are the main characters?"
+
+### Adding Your Own Documents
+
+You can replace Alice in Wonderland with your own documents:
 
 ```bash
-pnpm ingest "docs/**/*.md"
-```
-
-Or ingest from a specific directory:
-
-```bash
-pnpm ingest "path/to/your/docs/**/*.{md,txt}"
+# Add files to docs/ folder, then ingest
+pnpm ingest "docs/**/*.{md,txt}"
 ```
 
 ### API Endpoints
@@ -151,14 +154,14 @@ const response = await fetch('/api/chat', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    message: 'What is RAG?',
+    message: 'Who is the Cheshire Cat?',
     sessionId: 1, // optional, for conversation continuity
   }),
 });
 
 const data = await response.json();
 // {
-//   answer: "RAG stands for...",
+//   answer: "The Cheshire Cat is...",
 //   sources: [...],
 //   conversationId: 1
 // }
@@ -213,11 +216,13 @@ MIT License - feel free to use this project for learning or as a foundation for 
 ## 🙏 Acknowledgments
 
 Built with:
-- [LangChain](https://github.com/langchain-ai/langchainjs) & [LangGraph](https://github.com/langchain-ai/langgraphjs)
+- [LangChain](https://github.com/langchain-ai/langchainjs)
 - [Next.js](https://nextjs.org)
 - [Neon](https://neon.tech)
 - [Vercel](https://vercel.com)
 - [OpenAI](https://openai.com)
+
+Alice's Adventures in Wonderland by Lewis Carroll is in the public domain.
 
 ## 📧 Questions?
 
