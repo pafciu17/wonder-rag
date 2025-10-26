@@ -1,0 +1,25 @@
+{
+  "name": "@langgraph-rag/rag",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@langgraph-rag/db": "workspace:*",
+    "@langgraph-rag/ingest": "workspace:*",
+    "@langchain/openai": "^0.0.19",
+    "@langchain/core": "^0.1.10",
+    "langchain": "^0.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}
+
+
