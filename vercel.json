@@ -1,10 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm build",
+  "buildCommand": "pnpm --filter @langgraph-rag/db build && pnpm --filter @langgraph-rag/ingest build && pnpm --filter @langgraph-rag/rag build && pnpm --filter web build",
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
   "framework": null,
   "outputDirectory": "apps/web/.next"
 }
-
-
