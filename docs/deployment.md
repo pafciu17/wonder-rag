@@ -13,8 +13,15 @@ This guide covers deploying the LangGraph RAG demo to Vercel.
 
 ### 1. Prepare Your Database
 
-Make sure your Neon Postgres database has the pgvector extension and tables set up:
+Make sure your Neon Postgres database has the pgvector extension and tables set up.
 
+**Option A: Run migrations locally** (recommended):
+```bash
+# Set your DATABASE_URL in .env first
+pnpm db:migrate
+```
+
+**Option B: Manual setup**:
 1. Go to your Neon console
 2. Open the SQL Editor
 3. Run the initialization script from `packages/db/drizzle/0000_init.sql`

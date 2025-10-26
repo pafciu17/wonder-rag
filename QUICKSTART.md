@@ -19,10 +19,12 @@ DATABASE_URL=postgresql://user:pass@host.neon.tech/db?sslmode=require
 
 ## Step 3: Initialize Database
 
-1. Go to [Neon Console](https://console.neon.tech)
-2. Open SQL Editor
-3. Copy/paste contents from `packages/db/drizzle/0000_init.sql`
-4. Execute
+Run the migrations:
+```bash
+pnpm db:migrate
+```
+
+This will automatically create all required tables and indexes in your Neon database.
 
 ## Step 4: Ingest Documents
 
@@ -84,6 +86,7 @@ Try asking:
 pnpm dev           # Start dev server
 pnpm build         # Build for production  
 pnpm ingest        # Run document ingestion
+pnpm db:migrate    # Run database migrations
 pnpm type-check    # Check TypeScript types
 pnpm clean         # Clean build artifacts
 ```

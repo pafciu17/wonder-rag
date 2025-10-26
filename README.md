@@ -73,7 +73,12 @@ DATABASE_URL=postgresql://user:password@your-neon-host.neon.tech/dbname?sslmode=
 
 3. **Initialize database**:
 
-Execute the SQL script in your Neon console:
+Run the database migrations:
+```bash
+pnpm db:migrate
+```
+
+Or manually execute the SQL script in your Neon console:
 ```bash
 cat packages/db/drizzle/0000_init.sql
 ```
@@ -188,6 +193,7 @@ See [Deployment Guide](./docs/deployment.md) for detailed instructions.
 - `pnpm build` - Build for production
 - `pnpm start` - Start production server
 - `pnpm ingest` - Run document ingestion
+- `pnpm db:migrate` - Run database migrations
 - `pnpm type-check` - Type check all packages
 - `pnpm clean` - Clean build artifacts
 

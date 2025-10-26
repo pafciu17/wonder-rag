@@ -8,6 +8,7 @@
     "build": "pnpm --filter web build",
     "start": "pnpm --filter web start",
     "ingest": "pnpm --filter ingest run ingest",
+    "db:migrate": "pnpm --filter @langgraph-rag/db build && pnpm --filter @langgraph-rag/db db:migrate",
     "type-check": "pnpm -r run type-check",
     "clean": "pnpm -r run clean && rm -rf node_modules"
   },
